@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7fb">
+  <meta name="description" content="Learn concepts, get study answers, and build a learning path with EduGenie.">
+  <title>EduGenie | Your AI-Powered Learning Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="EduGenie home">
+        <span class="brand-mark" aria-hidden="true">e</span>
+        <span>EduGenie</span>
+      </a>
+      <div class="topbar-note"><span class="status-dot"></span> Learn Smarter. Understand Faster.</div>
+      <a class="topbar-link" href="#learning-tools">Explore tools <span aria-hidden="true">↘</span></a>
+    </header>
+
+    <main>
+      <section class="welcome-band" aria-labelledby="welcome-title">
+        <div class="welcome-copy">
+          <p class="eyebrow"><span class="sparkle" aria-hidden="true">✳</span> YOUR AI-POWERED LEARNING COMPANION</p>
+          <h1 id="welcome-title">Your Personal AI<br>Learning Assistant</h1>
+          <p class="welcome-description">Understand concepts, ask questions, generate quizzes, summarize study material, and build personalized learning paths with AI.</p>
+          <a class="welcome-action" href="#learning-tools">Start Learning <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="art-note note-top">one idea at a time</div>
+          <div class="book-shape"><span>✦</span><i></i><i></i><i></i></div>
+          <div class="art-note note-bottom">keep going <span>↗</span></div>
+          <span class="art-star star-one">✳</span><span class="art-star star-two">✦</span>
+        </div>
+        <div class="welcome-index"><span>01</span><span class="index-line"></span><span>LEARN AT YOUR PACE</span></div>
+      </section>
+
+      <section class="tools-section" id="learning-tools" aria-labelledby="tools-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">PICK UP WHERE YOU ARE</p>
+            <h2 id="tools-title">What are we learning today?</h2>
+          </div>
+          <span class="section-count">05 <span>learning tools</span></span>
+        </div>
+
+        <div class="tool-grid" role="tablist" aria-label="Learning tools">
+          <button class="tool-card is-active" type="button" role="tab" aria-selected="true" data-mode="explain">
+            <span class="tool-icon icon-lilac" aria-hidden="true">✳</span><span class="tool-number">01</span>
+            <span class="tool-title">Explain a concept</span><span class="tool-description">Make a new idea feel familiar.</span>
+            <span class="tool-open">Open tool <span aria-hidden="true">↗</span></span>
+          </button>
+          <button class="tool-card" type="button" role="tab" aria-selected="false" data-mode="qa">
+            <span class="tool-icon icon-peach" aria-hidden="true">?</span><span class="tool-number">02</span>
+            <span class="tool-title">Ask a question</span><span class="tool-description">Get a thoughtful study answer.</span>
+            <span class="tool-open">Open tool <span aria-hidden="true">↗</span></span>
+          </button>
+          <button class="tool-card" type="button" role="tab" aria-selected="false" data-mode="quiz">
+            <span class="tool-icon icon-mint" aria-hidden="true">✓</span><span class="tool-number">03</span>
+            <span class="tool-title">Generate a quiz</span><span class="tool-description">See what you know so far.</span>
+            <span class="tool-open">Open tool <span aria-hidden="true">↗</span></span>
+          </button>
+          <button class="tool-card" type="button" role="tab" aria-selected="false" data-mode="summary">
+            <span class="tool-icon icon-yellow" aria-hidden="true">≡</span><span class="tool-number">04</span>
+            <span class="tool-title">Summarize notes</span><span class="tool-description">Turn long notes into key points.</span>
+            <span class="tool-open">Open tool <span aria-hidden="true">↗</span></span>
+          </button>
+          <button class="tool-card" type="button" role="tab" aria-selected="false" data-mode="path">
+            <span class="tool-icon icon-blue" aria-hidden="true">⌁</span><span class="tool-number">05</span>
+            <span class="tool-title">Build a learning path</span><span class="tool-description">Know what to learn next.</span>
+            <span class="tool-open">Open tool <span aria-hidden="true">↗</span></span>
+          </button>
+        </div>
+
+        <section class="workspace-panel" id="workspace-panel" role="tabpanel" aria-labelledby="active-tool-title">
+          <div class="workspace-heading">
+            <span class="workspace-kicker"><span class="workspace-icon" aria-hidden="true">✳</span> YOUR LEARNING DESK</span>
+            <span class="powered-by">POWERED BY GEMINI <span aria-hidden="true">✦</span></span>
+          </div>
+          <div class="workspace-layout">
+            <div class="workspace-intro">
+              <span class="step-label">LET'S GET INTO IT</span>
+              <h2 id="active-tool-title">Explain a concept</h2>
+              <p id="active-tool-description">A clear, beginner-friendly explanation, right when you need one.</p>
+            </div>
+            <form id="learning-form" class="learning-form">
+              <label id="input-label" for="learning-input">What would you like to understand?</label>
+              <textarea id="learning-input" name="input" rows="3" required maxlength="20000" placeholder="Try “How does photosynthesis work?”"></textarea>
+              <div class="form-actions">
+                <span id="input-hint">A topic is a great place to start.</span>
+                <button class="generate-button" id="generate-button" type="submit"><span>Generate with Gemini</span><span aria-hidden="true">↗</span></button>
+              </div>
+            </form>
+          </div>
+          <div id="result-region" class="result-region" aria-live="polite" aria-atomic="false"></div>
+        </section>
+      </section>
+
+      <section class="promise-section" aria-labelledby="promise-title">
+        <div class="promise-heading">
+          <span class="promise-mark" aria-hidden="true">e</span>
+          <div><p class="eyebrow eyebrow-dark">A LITTLE MORE CLARITY, EVERY DAY</p><h2 id="promise-title">Why Choose<br>EduGenie?</h2></div>
+        </div>
+        <ul class="promise-list">
+          <li><span>01</span>Simple explanations</li>
+          <li><span>02</span>Instant academic answers</li>
+          <li><span>03</span>AI-generated quizzes</li>
+          <li><span>04</span>Quick revision summaries</li>
+          <li><span>05</span>Personalized learning paths</li>
+        </ul>
+        <div class="promise-aside" aria-hidden="true"><span>small steps<br>add up.</span><b>↗</b></div>
+      </section>
+
+      <section class="how-section" aria-labelledby="how-title">
+        <div class="how-heading">
+          <p class="eyebrow eyebrow-dark">THREE STEPS TO YOUR NEXT AHA MOMENT</p>
+          <h2 id="how-title">How it works</h2>
+        </div>
+        <div class="how-grid">
+          <article class="how-step"><span class="how-number">01</span><h3>Choose a Learning Tool</h3><p>Pick the kind of help you need right now.</p></article>
+          <article class="how-step"><span class="how-number">02</span><h3>Enter Your Topic or Question</h3><p>Share a topic, question, or study notes.</p></article>
+          <article class="how-step"><span class="how-number">03</span><h3>Get AI-Powered Results</h3><p>Review a clear response tailored to your task.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><a class="brand footer-brand" href="/" aria-label="EduGenie home"><span class="brand-mark" aria-hidden="true">e</span><span>EduGenie</span></a><span>EduGenie – Google Gemini Powered Learning Assistant<br>Built for smarter and personalized learning.</span><span class="footer-year">MADE FOR THE CURIOUS</span></footer>
+  </div>
+  <script src="{{ url_for('static', path='/script.js') }}" defer></script>
+</body>
+</html>
